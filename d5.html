@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>flex</title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+				list-style: none;
+			}
+			
+			html,
+			body {
+				height: 100%;
+			}
+			
+			#menu {
+				width: 980px;
+				margin: 0 auto;
+				display: flex;
+				flex-flow: column;
+				height: 200px;
+				/*
+				flex-flow: column;
+				设置时, 如果没设置高度, 则不会有按比例显示宽度的效果	 
+				*/
+			}
+			
+			#menu li {
+				/*弹性盒中的单项*/
+				border: 1px solid cornflowerblue;
+				margin-bottom: 5px;
+				text-align: center;
+			}
+			
+			#menu li a {
+				display: block;
+				height: 26px;
+				line-height: 26px;
+				margin-right: 2px;
+				text-decoration: none;
+				text-align: center;
+			}
+			
+			.item1 {
+				flex: 1;
+			}
+			
+			.item2 {
+				flex: 2;
+			}
+			
+			.item3 {
+				flex: 3;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div>弹性布局之按比例显示宽度</div>
+		<ul id="menu">
+			<li class="item1">
+				<a href="#">公司简介</a>
+			</li>
+			<li class="item2">
+				<a href="#">商品展示</a>
+			</li>
+			<li class="item3">
+				<a href="#">后台管理</a>
+			</li>
+		</ul>
+
+	</body>
+
+</html>
