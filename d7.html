@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>媒介查询</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			header,
+			footer {
+				background-color: #0099ff;
+				height: 30px;
+				clear: both;
+			}
+			
+			[class^=col] {
+				float: left;
+				height: 200px;
+			}
+			
+			.col25 {
+				width: 25%;
+				background: orangered;
+			}
+			
+			.col50 {
+				width: 50%;
+				background: purple;
+			}
+			
+			@media only screen and (max-width: 480px) {
+				[class^=col] {
+					float: none;
+					height: 200px;
+					width: 100%;
+				}
+			}
+			
+			@media only screen and (min-width: 480px) and (max-width:960px) {
+				.container {
+					width: 90%;
+					margin: 0 auto;
+				}
+			}
+			
+						@media only screen and (min-width: 960px) {
+				.container {
+					width: 960px;
+					margin: 0 auto;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<i>响应式栅格系统</i>
+		<div class="container">
+			<header>header</header>
+			<div class="col25"></div>
+			<div class="col50"></div>
+			<div class="col25"></div>
+			<footer>footer</footer>
+		</div>
+
+	</body>
+
+</html>
