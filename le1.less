@@ -1,0 +1,88 @@
+@pcolor: #003366;
+.cls {
+    background: @pcolor;
+    color: @pcolor;
+    border: 1px solid @pcolor;
+}
+
+
+/*混入*/
+//定义函数
+.circle(@length: 100px, @color: lightbule) {
+    width: @length;
+    height: @length;
+    background: @color;
+    border-radius: @length/2;
+    float: left;
+}
+//使用函数
+.c1 {
+    circle();
+    /*默认参数*/
+}
+
+.c2 {
+    circle(200px, red);
+    /*设置参数*/
+}
+
+.c1 {
+    circle(300px);
+    /*制定部分*/
+}
+
+//嵌套
+#main{
+    color: @color;
+    .sub1{
+        width:100px;
+    }
+    &.sub2{
+        height: 100px;
+    }
+}
+// #main .sub1
+// #main.sub2
+@color:blue;
+
+
+/*运算*/
+@base: 5%;
+@filler: @base * 2;
+@other: @base + @filler;
+@base-color:lightblue;
+.cls41{
+    color: #888 / 4;
+    background-color: @base-color + #111;
+    height: 100% / 2 + @filler;
+}
+//结果
+.cls41 {
+  color: #222222;
+  background-color: #bee9f7;
+  height: 60%;
+}
+
+/*继承*/
+.animal {
+    background-color: black;
+    color: white;
+}
+.bear {
+    &:extend(.animal);
+    background-color: brown;
+}
+.mouse{
+    &:extend(.animal);
+}
+//结果
+/*继承*/
+.animal,
+.bear,
+.mouse {
+  background-color: black;
+  color: white;
+}
+.bear {
+  background-color: brown;
+}
