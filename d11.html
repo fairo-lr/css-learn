@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>DOM</title>
+    </head>
+
+    <body>
+        <div id="div1"><p id="p1">p1</p>
+            <p id="p2">p2</p>
+            <p id="p3">p3</p>
+        </div>
+        <script type="text/javascript">
+            var div1 = document.getElementById("div1");
+           div1.setAttribute("data-index","1");
+           div1.setAttribute("ss","sss");
+           div1.setAttribute("ss","sss");
+                       location.href=location.href;  //刷新
+            //location.reload(true);  //强制加载，不加true则从缓存中刷新
+        </script>
+    </body>
+</html>
